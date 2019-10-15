@@ -16,13 +16,13 @@ public class SuperSmartParkingBoy extends ParkingBoy{
 
         ParkingLot parkingLot = getParkingLotWithGreaterEmptyPositionRate();
         if(parkingLot == null) {
-            this.lastErrorMessage = "Not enough position.";
+            this.lastErrorMessage = NOT_ENOUGH_POSITION;
             return null;
         }
 
         ParkingTicket parkingTicket = parkingLot.park(car);
         if(parkingTicket == null)
-            this.lastErrorMessage = "Not enough position.";
+            this.lastErrorMessage = NOT_ENOUGH_POSITION;
 
         return parkingTicket;
     }

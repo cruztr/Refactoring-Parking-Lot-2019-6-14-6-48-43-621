@@ -1,7 +1,5 @@
 package com.oocl.cultivation;
 
-import jdk.nashorn.internal.runtime.arrays.ArrayLikeIterator;
-
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
@@ -9,6 +7,10 @@ import java.util.Objects;
 import static java.util.Objects.isNull;
 
 public class ParkingBoy {
+
+    public static final String NOT_ENOUGH_POSITION = "Not enough position.";
+    public static final String PLEASE_PROVIDE_YOUR_PARKING_TICKET = "Please provide your parking ticket.";
+    public static final String UNRECOGNIZED_PARKING_TICKET = "Unrecognized parking ticket.";
 
     List<ParkingLot> parkingLotList;
     String lastErrorMessage;
@@ -36,13 +38,13 @@ public class ParkingBoy {
 
         ParkingLot parkingLot = getFirstAvailableParkingLot();
         if(parkingLot == null) {
-            this.lastErrorMessage = "Not enough position.";
+            this.lastErrorMessage = NOT_ENOUGH_POSITION;
             return null;
         }
 
         ParkingTicket parkingTicket = parkingLot.park(car);
         if(parkingTicket == null)
-            this.lastErrorMessage = "Not enough position.";
+            this.lastErrorMessage = NOT_ENOUGH_POSITION;
 
         return parkingTicket;
     }
@@ -52,7 +54,7 @@ public class ParkingBoy {
             return null;
 
         if(ticket == null){
-            this.lastErrorMessage = "Please provide your parking ticket.";
+            this.lastErrorMessage = PLEASE_PROVIDE_YOUR_PARKING_TICKET;
             return null;
         }
 
@@ -66,7 +68,7 @@ public class ParkingBoy {
             return car;
         }
 
-        this.lastErrorMessage = "Unrecognized parking ticket.";
+        this.lastErrorMessage = UNRECOGNIZED_PARKING_TICKET;
         return null;
     }
 
