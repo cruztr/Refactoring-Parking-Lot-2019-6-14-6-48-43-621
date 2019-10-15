@@ -8,4 +8,7 @@
     
 3. Switch Statements
     - Multiple if statements can be coupled together
+    
+4. Speculative Generality
+    - if statement is not needed anymore
 

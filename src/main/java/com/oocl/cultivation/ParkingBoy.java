@@ -47,9 +47,6 @@ public class ParkingBoy {
     }
 
     public Car fetch(ParkingTicket ticket) {
-        if(parkingLotList.isEmpty())
-            return null;
-
         if(ticket == null){
             this.lastErrorMessage = PLEASE_PROVIDE_YOUR_PARKING_TICKET;
             return null;
