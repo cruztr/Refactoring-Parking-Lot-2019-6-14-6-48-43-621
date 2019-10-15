@@ -33,9 +33,6 @@ public class ParkingBoy {
     }
 
     public ParkingTicket park(Car car) {
-        if(parkingLotList.isEmpty())
-            return null;
-
         ParkingLot parkingLot = getFirstAvailableParkingLot();
         if(parkingLot == null) {
             this.lastErrorMessage = NOT_ENOUGH_POSITION;

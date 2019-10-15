@@ -11,9 +11,6 @@ public class SuperSmartParkingBoy extends ParkingBoy{
 
     @Override
     public ParkingTicket park(Car car) {
-        if(parkingLotList.isEmpty())
-            return null;
-
         ParkingLot parkingLot = getParkingLotWithGreaterEmptyPositionRate();
         if(parkingLot == null) {
             this.lastErrorMessage = NOT_ENOUGH_POSITION;
