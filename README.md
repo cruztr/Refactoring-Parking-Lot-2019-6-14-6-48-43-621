@@ -5,4 +5,7 @@
     
 2. Dead Code
     - Current checking for emptyList is no longer needed because it was handled in the other methods
+    
+3. Switch Statements
+    - Multiple if statements can be coupled together
 
