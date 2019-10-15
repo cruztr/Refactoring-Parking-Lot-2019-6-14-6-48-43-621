@@ -6,9 +6,12 @@
 2. Dead Code
     - Current checking for emptyList is no longer needed because it was handled in the other methods
     
-3. Switch Statements
+3. Switch Statements 
     - Multiple if statements can be coupled together
+
+4. Long Method 
+    - Many executable codes in the ParkingBoy methods
     
-4. Speculative Generality
+5. Speculative Generality
     - if statement is not needed anymore
 
