@@ -14,4 +14,8 @@
     
 5. Speculative Generality
     - if statement is not needed anymore
+    
+6. Extracted to method
+    - Not exactly code smell, but refactored to extract in separate method 
+    and made descriptive method name to increase readability as part of clean code practice
 

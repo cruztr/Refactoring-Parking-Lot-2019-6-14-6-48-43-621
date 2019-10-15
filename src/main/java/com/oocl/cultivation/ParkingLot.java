@@ -11,7 +11,7 @@ public class ParkingLot {
         this(10);
     }
 
-    public ParkingLot(int capacity) {
+    private ParkingLot(int capacity) {
         this.capacity = capacity;
     }
 

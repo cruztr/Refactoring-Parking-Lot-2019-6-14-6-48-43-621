@@ -52,18 +52,21 @@ public class ParkingBoy {
             return null;
         }
 
-        Car car = parkingLotList.stream()
-                .map(parkingLotInsideList -> parkingLotInsideList.fetch(ticket))
-                .filter(Objects::nonNull)
-                .findFirst()
-                .orElse(null);
-
+        Car car = getCarIfInParkingLotList(ticket);
         if(!isNull(car)){
             return car;
         }
 
         this.lastErrorMessage = UNRECOGNIZED_PARKING_TICKET;
         return null;
+    }
+
+    private Car getCarIfInParkingLotList(ParkingTicket ticket) {
+        return parkingLotList.stream()
+                .map(parkingLotInsideList -> parkingLotInsideList.fetch(ticket))
+                .filter(Objects::nonNull)
+                .findFirst()
+                .orElse(null);
     }
 
     private ParkingLot getFirstAvailableParkingLot() {
